@@ -71,9 +71,9 @@ public class Res extends RESTService {
 
   @Api
   @SwaggerDefinition(
-      info = @Info(title = "154", version = "$Metadata_Version$",
-          description = "$Metadata_Description$",
-          termsOfService = "$Metadata_Terms$",
+      info = @Info(title = "154", version = "",
+          description = "",
+          termsOfService = "",
           contact = @Contact(name = "", email = "CAEAddress@gmail.com") ,
           license = @License(name = "BSD",
               url = "https://github.com/PhilCAEOrg2/microservice-154/blob/master/LICENSE.txt") ) )
@@ -87,7 +87,7 @@ public class Res extends RESTService {
    * gettest
    *
    * 
-   *
+   * @param body  a JSONObject
    * 
    * @return Response 
    * 
@@ -100,7 +100,8 @@ public class Res extends RESTService {
        @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "res1")
   })
   @ApiOperation(value = "gettest", notes = " ")
-  public Response gettest() {
+  public Response gettest(String body) {
+    JSONObject body_JSON = (JSONObject) JSONValue.parse(body);
 
 
 
